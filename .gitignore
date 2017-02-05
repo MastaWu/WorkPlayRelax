@@ -1,0 +1,2 @@
+# This is where you set the files that you do not want in a repository
+node_modules/
