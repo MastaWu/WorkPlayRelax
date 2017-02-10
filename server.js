@@ -46,7 +46,7 @@ app.get('/whatever', function (req, res) {
     for(var x = 0; x < 10; x++){
         console.log(x);
     }
-
+    // res = respond
     res.send("Check your logging.");
 });
 
