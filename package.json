@@ -11,5 +11,10 @@
     "url": "WorkPlayRelax"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.1",
+    "morgan": "^1.8.0"
+  }
 }

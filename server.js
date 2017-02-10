@@ -30,6 +30,7 @@ app.use(function(req, res, next) {
 
 
 
+
 // Example of how to create your first link
 // This is saying, that when your browser sends a request to the server at '/'
 // for data, then send 'Hello World' back to the browser
@@ -39,6 +40,15 @@ app.get('/', function (req, res) {
 });
 
 
+app.get('/whatever', function (req, res) {
+    // in the response, we want to send the words 'Hello World!'
+
+    for(var x = 0; x < 10; x++){
+        console.log(x);
+    }
+
+    res.send("Check your logging.");
+});
 
 
 
