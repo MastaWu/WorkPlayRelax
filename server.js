@@ -50,7 +50,8 @@ app.get('/whatever', function (req, res) {
     res.send("Check your logging.");
 });
 
-
+// GET request
+// This returns a list of items
 app.get('/list', function (req, res) {
 
     var object = {
