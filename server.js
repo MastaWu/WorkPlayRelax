@@ -51,6 +51,19 @@ app.get('/whatever', function (req, res) {
 });
 
 
+app.get('/list', function (req, res) {
+
+    var object = {
+        "item1" : "water",
+        "item2" : "food",
+        "item3" : "candy",
+        "item4" : "snacks"
+    };
+
+    res.json(object);
+
+});
+
 
 
 
