@@ -60,7 +60,7 @@ app.get('/list', function (req, res) {
         "item3" : "candy",
         "item4" : "snacks"
     };
-
+    // Responding with a json object
     res.json(object);
 
 });
