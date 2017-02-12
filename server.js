@@ -66,6 +66,26 @@ app.get('/list', function (req, res) {
 });
 
 
+// GET request
+// This returns a list of items
+app.post('/postList', function (req, res) {
+    var object = {
+        item1 : "water",
+        item2 : "food",
+        item3 : "candy",
+        item4 : "snacks"
+    };
+
+    console.log(JSON.stringify(object));
+
+    console.log(req.body.item);
+    object["item5"] = req.body.item;
+
+    console.log(JSON.stringify(object));
+
+    res.json({"msg": "Successful!", "New Object" : object});
+
+});
 
 
 // Add code before this line;
