@@ -66,7 +66,7 @@ app.get('/list', function (req, res) {
 });
 
 
-// GET request
+// POST request
 // This returns a list of items
 app.post('/postList', function (req, res) {
     var object = {
@@ -76,17 +76,72 @@ app.post('/postList', function (req, res) {
         item4 : "snacks"
     };
 
-    console.log(JSON.stringify(object));
+    var object2 = ["item1", "item2"];
 
-    console.log(req.body.item);
+    console.log(JSON.stringify(object));
+    console.log("\nArray: " + object2);
+
+    console.log("\nItem from request: " + req.body.item);
     object["item5"] = req.body.item;
-
-    console.log(JSON.stringify(object));
-
+    object2.push(req.body.item);
+    console.log("\n" + JSON.stringify(object));
+    console.log("Array after item: " + object2);
     res.json({"msg": "Successful!", "New Object" : object});
-
 });
 
+// Post request
+// This receives data from the client, and adds it to the object. The object is not persisted, because it is not
+// connected to a database.
+app.post('/postList2', function(req, res) {
+    // This is an object.
+    // A variable holds the information. It needs to be declared. Remember to use the var keyword when initially
+    // declaring variable.
+    // Valid variable
+    // ex. var a;lskdjfa;sld;
+    //
+    // Not valid variable:
+    // ex. a;lsdkjfla;kjsdf
+
+    // This is an object. It stores data in key: value pairs.
+    // Ex. Each person has a shopping cart.
+    // Each person's shopping cart has it's own items
+    // Ai Yen : banana, apple, grapes.
+    // Carmen : sausages, eggs, yogurt
+    // Actual object:
+    // var shoppingCart = {
+    //   "ai yen" : [ "banana", "apple", "grapes" ],
+    //   "carmen" : [ "sausages", "eggs", "yogurt" ]
+    // }
+    //
+    // Another variable example:
+    // Single Item
+    // var name = "Stephen";
+    // var age = 20;
+    // Array of items
+    // var roommates = [ "Stephen", "Ai Yen", "Carmen", "Dario"];
+
+    // Object containing items
+    var list = {
+        item1 : "banana",
+        item2 : "apple",
+        item3 : "grapes"
+    };
+
+    // This prints out the original list to the log. JSON.stringify lets me print out what's inside the list.
+    console.log("Original List: " + JSON.stringify(list));
+
+    // Processing the request
+    console.log("\nNow processing the request");
+
+    // This is adding the item from the request to the object.
+    list.item4 = req.body.item;
+
+    // This prints out the new list in the log
+    console.log("\nAfter POST call List: " + JSON.stringify(list));
+
+    // This is just sending a message to the client, that the request has been processed.
+    res.json({"msg": "Message received!"});
+});
 
 // Add code before this line;
 
